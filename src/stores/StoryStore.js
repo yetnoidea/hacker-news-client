@@ -2,7 +2,6 @@ import AppDispatcher from 'es6!../dispatchers/AppDispatcher';
 import ChangeableStore from 'es6!./ChangeableStore';
 import SimpleHTTPClient from 'es6!../net/SimpleHTTPClient';
 import ActionTypes from 'es6!../constants/ActionTypes';
-import Selector from 'es6!../selectors/Selector';
 
 const STORIES = Symbol('stories');
 const IDS = Symbol('ids');
