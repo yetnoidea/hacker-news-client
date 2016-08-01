@@ -1,5 +1,5 @@
 require(
     [
-        'es6!/src/app'
+        'es6!app'
     ]
 );
