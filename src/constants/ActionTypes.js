@@ -1,0 +1,5 @@
+export default {
+    LOAD_STORIES_INITIALLY: 0,
+    LOAD_MORE_STORIES: 1,
+    SELECT_STORY: 2
+};
