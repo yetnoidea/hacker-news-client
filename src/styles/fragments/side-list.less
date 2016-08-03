@@ -1,0 +1,20 @@
+> div.side-list {
+    height: 100%;
+    width: 380px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &.loading {
+        position: relative;
+        overflow: hidden;
+
+        @import "loader";
+    }
+
+    > ul {
+        margin: 0;
+        padding: 0;
+
+        @import "side-list-item";
+    }
+}

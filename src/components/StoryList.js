@@ -1,5 +1,5 @@
 import React from 'react';
-import StoryList from 'es6!./StoryList';
+import StoryBrief from 'es6!./StoryBrief';
 import StoryStore from 'es6!../stores/StoryStore';
 import StoryAction from 'es6!../actions/StoryAction';
 
@@ -32,10 +32,20 @@ export default React.createClass({
     },
 
     render() {
-        if (this.state.stories === null) return <div className="loading side-box" style={{height: '100%'}}></div>;
+        const { stories } = this.state;
+
+        if (stories === null) 
+            return (
+                <div className="side-list loading">
+                    <div className="loader">Loading...</div>
+                </div>
+            );
+        
         return (
-            <div className="side-box" onScroll={this.handleScroll} style={{height: '100%', width: '40%', overflowY: 'auto', overflowX: 'none'}}>
-                <StoryList stories={this.state.stories} onScroll={this.handleScroll}/>
+            <div className="side-list" onScroll={this.handleScroll}>
+                <ul className="stories-list">
+                    {stories.map((story) => <StoryBrief story={story} key={story.id}/>)}
+                </ul>
             </div>
         );
     }

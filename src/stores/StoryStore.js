@@ -29,6 +29,10 @@ class StoryStore extends ChangeableStore {
         return this[IDS].slice(0, this[READ_CURSOR]).map((id) => this[STORIES][id]);
     }
 
+    getStoryById(id) {
+        return this[STORIES][id];
+    }
+
     noMoreData() {
         return this[READ_CURSOR] >= this[IDS].size
     }
@@ -76,6 +80,9 @@ function loadStoriesInitially(action) {
         .then((ids) => {
             store.init(ids);
             loadMoreStories();
+        })
+        .catch((err) => {
+            console.error(err);
         });
 }
 

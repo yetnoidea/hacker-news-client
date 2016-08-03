@@ -1,0 +1,33 @@
+.ellipsis() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.centerX() {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto; /*or margin: 0 auto;*/
+}
+
+.centerX(@width) {
+    .centerX;
+    width: @width;
+}
+
+.centerY() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto; /*or margin: 0 auto;*/
+}
+
+.centerY(@height) {
+    .centerY;
+    height: @height;
+}
+
+.hide-text() {
+    text-indent: -9999em;
+}

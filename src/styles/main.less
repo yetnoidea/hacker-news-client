@@ -1,0 +1,25 @@
+@import "reset";
+
+html {
+    height: 100%;
+    font-family: "Segoe UI", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", "trebuchet MS", Arial, sans-serif;
+
+    > body {
+        height: 100%;
+        overflow: hidden;
+
+        > div#container {
+            height: 100%;
+			background: rgb(255, 252, 250);
+			color: rgb(85, 85, 85);
+
+            > div {
+                height: 100%;
+                position: relative;
+
+                @import "fragments/side-list";
+                @import "fragments/main-box";
+            }
+        }
+    }
+}

@@ -1,5 +1,6 @@
 export default {
     LOAD_STORIES_INITIALLY: 0,
     LOAD_MORE_STORIES: 1,
-    SELECT_STORY: 2
+    SELECT_STORY: 2,
+    LOAD_COMMENTS_FOR_STORY: 3
 };
