@@ -1,7 +1,10 @@
 import React from 'react';
-import StoryBrief from 'es6!./StoryBrief';
+
 import StoryStore from 'es6!../stores/StoryStore';
 import StoryAction from 'es6!../actions/StoryAction';
+
+import StoryBrief from 'es6!./StoryBrief';
+import Loader from 'es6!./Loader';
 
 export default React.createClass({
     displayName: 'SideBox',
@@ -37,15 +40,26 @@ export default React.createClass({
         if (stories === null) 
             return (
                 <div className="side-list loading">
-                    <div className="loader">Loading...</div>
+                    <Loader event="loading">Loading...</Loader>;
                 </div>
             );
-        
+
+        let event = 'loading';
+        let text = '';
+
+        if (StoryStore.noMoreData()) {
+            event = 'loaded';
+            text = 'no more data';
+        }
+
         return (
             <div className="side-list" onScroll={this.handleScroll}>
                 <ul className="stories-list">
                     {stories.map((story) => <StoryBrief story={story} key={story.id}/>)}
                 </ul>
+                <div className="loader-tips">
+                    <Loader event={event}>{text}</Loader>
+                </div>
             </div>
         );
     }

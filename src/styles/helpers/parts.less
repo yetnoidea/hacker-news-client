@@ -1,0 +1,15 @@
+.scrollbar(@color) {
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        -webkit-transition: background-color 1s;
+        transition: background-color 1s;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background-color: @color; 
+    }
+}

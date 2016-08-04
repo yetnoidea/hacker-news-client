@@ -23,3 +23,25 @@
         }
     }
 }
+
+.fade-in-with-highlights(@hightlights, @duration: 1s) {
+    -webkit-animation: fade-in  @duration ease-in;
+    animation: fade-in  @duration ease-in;
+
+    @-webkit-keyframes fade-in {
+        0% {
+            background: @hightlights;
+        }
+        100% {
+            background: transparent;
+        }
+    }
+    @keyframes fade-in {
+        0% {
+            background: @hightlights;
+        }
+        100% {
+            background: transparent;
+        }
+    }
+}

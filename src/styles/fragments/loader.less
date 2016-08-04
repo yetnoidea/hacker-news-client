@@ -1,20 +1,27 @@
 @import "../helpers/utils";
-@import "../helpers/anmiations";
+@import "../helpers/animations";
 @import "../helpers/shapes";
 
 .loader {
-  @color: rgb(255, 104, 0);
-  @bgcolor: fade(@color, 20%);
-  @radius: 12px;
-  @line-weight: 3px;
-  @period: 1.1s;
+    .centerX;
+    .centerY;
 
-  .ring(@radius, @line-weight, @bgcolor);
-  border-bottom-color: @color;
+    &.loading {
+        @color: rgb(255, 104, 0);
+        @bgcolor: fade(@color, 20%);
+        @radius: 12px;
+        @line-weight: 3px;
+        @period: 1.1s;
 
-  .ever-rotate(@period);
+        .ring(@radius, @line-weight, @bgcolor);
+        border-bottom-color: @color;
 
-  .centerX;
-  .centerY;
-  .hide-text;
+        .ever-rotate(@period);
+        .hide-text;
+    }
+
+    &.loaded {
+        text-align: center;
+        color: rgb(255, 104, 0);
+    }
 }

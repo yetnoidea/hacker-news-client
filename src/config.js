@@ -7,7 +7,8 @@ var require = {
 				'react-dom': 'lib/react/react-dom.min',
 				'babel-polyfill': 'lib/babel/browser-polyfill.min',
 				flux: 'lib/flux/dist/Flux.min',
-				EventEmitter: 'lib/eventEmitter/EventEmitter.min'
+				EventEmitter: 'lib/eventEmitter/EventEmitter.min',
+				classnames: 'lib/classnames/index'
 		},
 		packages: [
 				{

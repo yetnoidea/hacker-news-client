@@ -1,10 +1,12 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import StoryStore from 'es6!../stores/StoryStore';
 import CommentStore from 'es6!../stores/CommentStore';
 import CommentAction from 'es6!../actions/CommentAction';
 
 import CommentList from 'es6!./CommentList';
+import Loader from 'es6!./Loader';
 
 export default React.createClass({
     displayName: 'StoryBox',
@@ -54,7 +56,7 @@ export default React.createClass({
             if (CommentStore.didCommentsRequestedByStoryId(id)) list = <CommentList ids={kids} />;
             else {
                 loading = true;
-                list = <div className="loader">Loading...</div>;
+                list = <Loader event="loading">Loading...</Loader>;
             }
         }
 
@@ -67,7 +69,7 @@ export default React.createClass({
                 <article>
                     {/* <iframe src={url} /> */}
                 </article>
-                <footer {...(loading ? {className: 'loading'} : {})}>
+                <footer className={classNames({ loading: loading })}>
                     {list}
                 </footer>
             </div>
