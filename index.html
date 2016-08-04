@@ -4,17 +4,9 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="lib/normalize-css/normalize.css"/>
 	<title>hacker-news-client</title>
-	<script>
-		window.APP_ENV = 'development';
-	</script>
 </head>
 <body>
-<script src="src/config.js"></script>
 <script src="lib/requirejs/require.js"></script>
-<script>
-	require([ 
-		'es6!src/main' 
-	]);
-</script>
+<script src="src/entry.js" data-env="development"></script>
 </body>
 </html>
