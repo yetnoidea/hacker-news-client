@@ -40,7 +40,7 @@ export default React.createClass({
         if (stories === null) 
             return (
                 <div className="side-list loading">
-                    <Loader event="loading">Loading...</Loader>;
+                    <Loader event="loading">Loading...</Loader>
                 </div>
             );
 
