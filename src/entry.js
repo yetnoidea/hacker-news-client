@@ -42,8 +42,10 @@ function startWithEntryModule() {
 	var completed = false;
 	var toast = createToast();
 
+	toast.show(getToastText(0));
+
 	requirejs.onResourceLoad = function (context, map, deps) {
-		if (!completed) toast.show((++ count) + ' modules loaded.');
+		if (!completed) toast.show(getToastText(++ count));
 	};
 
 	require(
@@ -55,6 +57,11 @@ function startWithEntryModule() {
 	    	toast.hide();
 	    }
 	);
+
+	function getToastText(moduleCount) {
+		if (moduleCount > 1) return moduleCount + ' modules loaded.';
+		return moduleCount + ' module loaded';
+	}
 
 	function createToast() {
 		var container = document.createElement('div');
