@@ -16,7 +16,7 @@ function configModules() {
 			'react-dom': 'lib/react/react-dom.min',
 			'babel-polyfill': 'lib/babel-polyfill/browser-polyfill',
 			flux: 'lib/flux/dist/Flux.min',
-			EventEmitter: 'lib/eventEmitter/EventEmitter.min',
+			EventEmitter: 'lib/EventEmitter/EventEmitter.min',
 			classnames: 'lib/classnames/index'
 		},
 		packages: [
