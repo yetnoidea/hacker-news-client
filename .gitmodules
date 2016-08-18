@@ -1,0 +1,27 @@
+[submodule "lib/babel-polyfill"]
+	path = lib/babel-polyfill
+	url = https://github.com/nicksrandall/babel-polyfill.git
+[submodule "lib/requirejs-babel"]
+	path = lib/requirejs-babel
+	url = https://github.com/mikach/requirejs-babel.git
+[submodule "lib/requirejs"]
+	path = lib/requirejs
+	url = https://github.com/requirejs/requirejs-bower.git
+[submodule "lib/requirejs-text"]
+	path = lib/requirejs-text
+	url = https://github.com/requirejs/text.git
+[submodule "lib/classnames"]
+	path = lib/classnames
+	url = https://github.com/JedWatson/classnames.git
+[submodule "lib/react"]
+	path = lib/react
+	url = https://github.com/reactjs/react-bower.git
+[submodule "lib/EventEmitter"]
+	path = lib/EventEmitter
+	url = https://github.com/Olical/EventEmitter.git
+[submodule "lib/flux"]
+	path = lib/flux
+	url = https://github.com/facebook/flux.git
+[submodule "lib/require-less"]
+	path = lib/require-less
+	url = https://github.com/guybedford/require-less.git

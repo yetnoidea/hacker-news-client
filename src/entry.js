@@ -4,12 +4,17 @@ startWithEntryModule();
 function configModules() {
 	var configs = {
 		paths: {
-			text: 'lib/text/text',
+			// runtime compilers
+			text: 'lib/requirejs-text/text',
 			es6: 'lib/requirejs-babel/es6',
 			babel: 'lib/requirejs-babel/babel-5.8.34.min',
+			autoprefixer: 'lib/autoprefixer/autoprefixer',
+			// autoprefixer: 'https://rawgithub.com/ai/autoprefixer-rails/master/vendor/autoprefixer.js',
+
+			// main libraries
 			react: 'lib/react/react.min',
 			'react-dom': 'lib/react/react-dom.min',
-			'babel-polyfill': 'lib/babel/browser-polyfill.min',
+			'babel-polyfill': 'lib/babel-polyfill/browser-polyfill',
 			flux: 'lib/flux/dist/Flux.min',
 			EventEmitter: 'lib/eventEmitter/EventEmitter.min',
 			classnames: 'lib/classnames/index'
@@ -59,9 +64,9 @@ function startWithEntryModule() {
 	);
 
 	function pluralify(text) {
-		return text.replace(/\b(\d+?)\s([a-zA-Z]+?)\b/, function (match, p1, p2) {
+		return text.replace(/\b(\d+?)\s[a-zA-Z]+?\b/, function (match, p1) {
 			if (Number(p1) <= 1) return match;
-			return match.replace(/\b([a-zA-Z]+?)\b/, '$&s');
+			return match + 's';
 		});
 	}
 
