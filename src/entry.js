@@ -42,10 +42,10 @@ function startWithEntryModule() {
 	var completed = false;
 	var toast = createToast();
 
-	toast.show(getToastText(0));
+	toast.show('0 module loaded.');
 
 	requirejs.onResourceLoad = function (context, map, deps) {
-		if (!completed) toast.show(getToastText(++ count));
+		if (!completed) toast.show(pluralify((++ count) + ' module loaded.'));
 	};
 
 	require(
@@ -58,9 +58,11 @@ function startWithEntryModule() {
 	    }
 	);
 
-	function getToastText(moduleCount) {
-		if (moduleCount > 1) return moduleCount + ' modules loaded.';
-		return moduleCount + ' module loaded';
+	function pluralify(text) {
+		return text.replace(/\b(\d+?)\s([a-zA-Z]+?)\b/, function (match, p1, p2) {
+			if (Number(p1) <= 1) return match;
+			return match.replace(/\b([a-zA-Z]+?)\b/, '$&s');
+		});
 	}
 
 	function createToast() {
