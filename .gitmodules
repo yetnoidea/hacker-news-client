@@ -25,3 +25,6 @@
 [submodule "lib/require-less"]
 	path = lib/require-less
 	url = https://github.com/yetnoidea/require-less.git
+[submodule "lib/normalize-less"]
+	path = lib/normalize-less
+	url = https://github.com/reitermarkus/normalize.less.git

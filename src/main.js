@@ -8,6 +8,7 @@ import CommentStore from 'es6!./stores/CommentStore';
 
 import App from 'es6!./components/App';
 
+import normalize from 'less!normalize-less';
 import style from 'less!./styles/main';
 
 ReactDOM.render(<App />, getContainer());

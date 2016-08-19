@@ -17,7 +17,8 @@ function configModules() {
 			'babel-polyfill': 'lib/babel-polyfill/browser-polyfill',
 			flux: 'lib/flux/dist/Flux.min',
 			EventEmitter: 'lib/EventEmitter/EventEmitter.min',
-			classnames: 'lib/classnames/index'
+			classnames: 'lib/classnames/index',
+			'normalize-less': 'lib/normalize-less/normalize'
 		},
 		packages: [
 			{
@@ -47,6 +48,8 @@ function configModules() {
 		configs.paths['react-dom'] = 'lib/react/react-dom';
 		configs.paths.flux = 'lib/flux/dist/Flux',
 		configs.paths.EventEmitter = 'lib/EventEmitter/EventEmitter';
+
+		configs.config.less.env = 'development';
 	}
 
 	requirejs.config(configs);
