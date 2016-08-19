@@ -40,7 +40,7 @@ function configModules() {
 				]
 			}
 		},
-	    waitSeconds: 20
+	    waitSeconds: 0
 	};
 
 	if (document.currentScript.dataset.env === 'development') {
