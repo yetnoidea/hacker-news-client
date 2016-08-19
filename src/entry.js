@@ -9,7 +9,7 @@ function configModules() {
 			es6: 'lib/requirejs-babel/es6',
 			babel: 'lib/requirejs-babel/babel-5.8.34.min',
 			// autoprefixer: 'lib/autoprefixer/autoprefixer',
-			autoprefixer: 'https://rawgithub.com/ai/autoprefixer-rails/master/vendor/autoprefixer.js',
+			autoprefixer: 'https://rawgithub.com/ai/autoprefixer-rails/master/vendor/autoprefixer',
 
 			// main libraries
 			react: 'lib/react/react.min',
