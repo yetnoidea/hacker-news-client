@@ -24,4 +24,4 @@
 	url = https://github.com/facebook/flux.git
 [submodule "lib/require-less"]
 	path = lib/require-less
-	url = https://github.com/guybedford/require-less.git
+	url = https://github.com/yetnoidea/require-less.git

@@ -1,41 +1,19 @@
 .ever-rotate(@period) {
-    -webkit-animation: ever-rotate @period infinite linear;
     animation: ever-rotate @period infinite linear;
 
-    @-webkit-keyframes ever-rotate {
-        0% {
-            -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        100% {
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
     @keyframes ever-rotate {
         0% {
-            -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
         }
         100% {
-            -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
         }
     }
 }
 
 .fade-in-with-highlights(@hightlights, @duration: 1s) {
-    -webkit-animation: fade-in  @duration ease-in;
     animation: fade-in  @duration ease-in;
 
-    @-webkit-keyframes fade-in {
-        0% {
-            background: @hightlights;
-        }
-        100% {
-            background: transparent;
-        }
-    }
     @keyframes fade-in {
         0% {
             background: @hightlights;

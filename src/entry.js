@@ -8,8 +8,8 @@ function configModules() {
 			text: 'lib/requirejs-text/text',
 			es6: 'lib/requirejs-babel/es6',
 			babel: 'lib/requirejs-babel/babel-5.8.34.min',
-			autoprefixer: 'lib/autoprefixer/autoprefixer',
-			// autoprefixer: 'https://rawgithub.com/ai/autoprefixer-rails/master/vendor/autoprefixer.js',
+			// autoprefixer: 'lib/autoprefixer/autoprefixer',
+			autoprefixer: 'https://rawgithub.com/ai/autoprefixer-rails/master/vendor/autoprefixer.js',
 
 			// main libraries
 			react: 'lib/react/react.min',
@@ -28,7 +28,15 @@ function configModules() {
 		],
 		config: {
 			less: {
-				relativeUrls: true
+				relativeUrls: true,
+				plugins: [
+					{
+						name: 'autoprefixer',
+						process: function (autoprefixer, source) {
+							return autoprefixer.process(source).css;
+						}
+					}
+				]
 			}
 		},
 	    waitSeconds: 20
@@ -37,6 +45,8 @@ function configModules() {
 	if (document.currentScript.dataset.env === 'development') {
 		configs.paths.react = 'lib/react/react';
 		configs.paths['react-dom'] = 'lib/react/react-dom';
+		configs.paths.flux = 'lib/flux/dist/Flux',
+		configs.paths.EventEmitter = 'lib/EventEmitter/EventEmitter';
 	}
 
 	requirejs.config(configs);
