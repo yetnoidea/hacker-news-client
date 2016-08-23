@@ -23,11 +23,16 @@ export default React.createClass({
     },
 
     updateView() {
+        this.loadingMore = false;
         this.setState({ stories: StoryStore.stories });
     },
 
     handleScroll(event) {
-        if (checkScrollToBottom(event.target, 20)) StoryAction.loadMoreStories();
+        if (this.loadingMore) return;
+        if (!checkScrollToBottom(event.target, 20)) return;
+
+        this.loadingMore = true;
+        StoryAction.loadMoreStories();
 
         function checkScrollToBottom(scrollable, tolerance) {
             return scrollable.scrollHeight <= scrollable.scrollTop + scrollable.clientHeight + tolerance;
@@ -44,13 +49,9 @@ export default React.createClass({
                 </div>
             );
 
-        let event = 'loading';
-        let text = '';
-
-        if (StoryStore.noMoreData()) {
-            event = 'loaded';
-            text = 'no more data';
-        }
+        const noMoreData = StoryStore.noMoreData();
+        const event = noMoreData ? 'loaded': 'loading';
+        const text = noMoreData ? 'no more data' : '';
 
         return (
             <div className="side-list" onScroll={this.handleScroll}>
