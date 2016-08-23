@@ -2,15 +2,18 @@
 @import "../helpers/parts";
 
 > div.story-box {
-    position: relative;
-    top: -100%;
-    margin-left: 380px;
-    height: 100%;
+    width: 400px;
+    flex: 1;
+
+    display: flex;
+    flex-flow: column nowrap;
 
     > header {
         box-sizing: border-box;
         padding: 10px;
         height: 80px;
+        flex: none;
+
         background: rgb(255, 102, 0);
         word-break: break-all;
 
@@ -21,6 +24,7 @@
             color: rgba(255, 255, 255, 0.85);
             font-weight: 400;
             font-size: 15px;
+            .ellipsis;
         }
 
         > h6.url {
@@ -44,8 +48,10 @@
     }
 
     > footer {
-        height: calc(~"100% - 80px");
+        flex: 1 1 0;
+
         overflow-y: auto;
+        overflow-x: hidden;
 
         .scrollbar(rgb(255, 102, 0));
 
