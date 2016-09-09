@@ -76,7 +76,7 @@ client.middleware(JSON.parse);
 
 function loadStoriesInitially(action) {
     client
-        .get('https://hacker-news.firebaseio.com/v0/newstories.json')
+        .get('https://hacker-news.firebaseio.com/v0/topstories.json')
         .then((ids) => {
             store.init(ids);
             loadMoreStories();
@@ -93,7 +93,7 @@ function loadMoreStories(action) {
     const promises = requestIds.map(requestStory);
     store.stepForward();
 
-    Promise.all(promises).then(() => store.emitChange());
+    Promise.all(promises).then(() => store.emitChange()).then(() => console.debug(JSON.stringify(store[STORIES])));
 }
 
 function requestStory(id) {

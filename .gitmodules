@@ -1,6 +1,3 @@
-[submodule "lib/babel-polyfill"]
-	path = lib/babel-polyfill
-	url = https://github.com/nicksrandall/babel-polyfill.git
 [submodule "lib/requirejs-babel"]
 	path = lib/requirejs-babel
 	url = https://github.com/mikach/requirejs-babel.git
@@ -28,3 +25,6 @@
 [submodule "lib/normalize-less"]
 	path = lib/normalize-less
 	url = https://github.com/reitermarkus/normalize.less.git
+[submodule "lib/babel"]
+	path = lib/babel
+	url = https://github.com/zce/babel.git

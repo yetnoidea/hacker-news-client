@@ -7,14 +7,14 @@ function configModules() {
 			// runtime compilers
 			text: 'lib/requirejs-text/text',
 			es6: 'lib/requirejs-babel/es6',
-			babel: 'lib/requirejs-babel/babel-5.8.34.min',
+			babel: 'lib/babel/browserl.min',
 			// autoprefixer: 'lib/autoprefixer/autoprefixer',
 			autoprefixer: 'https://rawgithub.com/ai/autoprefixer-rails/master/vendor/autoprefixer',
 
 			// main libraries
 			react: 'lib/react/react.min',
 			'react-dom': 'lib/react/react-dom.min',
-			'babel-polyfill': 'lib/babel-polyfill/browser-polyfill',
+			'babel-polyfill': 'lib/babel/browser-polyfill.min',
 			flux: 'lib/flux/dist/Flux.min',
 			EventEmitter: 'lib/EventEmitter/EventEmitter.min',
 			classnames: 'lib/classnames/index',
@@ -44,11 +44,12 @@ function configModules() {
 	};
 
 	if (document.currentScript.dataset.env === 'development') {
+		configs.paths.babel = 'lib/babel/browser';
+		configs.paths['babel-polyfill'] = 'lib/babel/browser-polyfill';
 		configs.paths.react = 'lib/react/react';
 		configs.paths['react-dom'] = 'lib/react/react-dom';
-		configs.paths.flux = 'lib/flux/dist/Flux',
+		configs.paths.flux = 'lib/flux/dist/Flux';
 		configs.paths.EventEmitter = 'lib/EventEmitter/EventEmitter';
-
 		configs.config.less.env = 'development';
 	}
 
